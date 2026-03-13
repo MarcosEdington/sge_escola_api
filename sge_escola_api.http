@@ -1,0 +1,6 @@
+@sge_escola_api_HostAddress = http://localhost:5230
+
+GET {{sge_escola_api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

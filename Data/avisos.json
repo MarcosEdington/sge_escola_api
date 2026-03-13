@@ -1,0 +1,56 @@
+[
+  {
+    "Id": 1,
+    "Titulo": "In\u00EDcio do Censo Escolar 2026",
+    "Mensagem": "Favor revisar os cadastros de CPFs e endere\u00E7os dos novos alunos matriculados.",
+    "DataPublicacao": "2026-03-09",
+    "Prioridade": "Alta",
+    "Destino": "Dashboard",
+    "Ativo": true
+  },
+  {
+    "Id": 2,
+    "Titulo": "Rematr\u00EDcula 2026",
+    "Mensagem": "O prazo para rematr\u00EDcula online encerra na pr\u00F3xima sexta-feira. N\u00E3o perca a vaga!",
+    "DataPublicacao": "2026-03-09",
+    "Prioridade": "Normal",
+    "Destino": "Portal",
+    "Ativo": true
+  },
+  {
+    "Id": 3,
+    "Titulo": "Reuni\u00E3o de Pais e Mestres",
+    "Mensagem": "Convidamos todos para a primeira reuni\u00E3o do ano letivo no s\u00E1bado \u00E0s 09:00.",
+    "DataPublicacao": "2026-03-10",
+    "Prioridade": "Alta",
+    "Destino": "Todos",
+    "Ativo": true
+  },
+  {
+    "Id": 4,
+    "Titulo": "Manuten\u00E7\u00E3o do Sistema",
+    "Mensagem": "O portal ficar\u00E1 indispon\u00EDvel hoje das 22h \u00E0s 23h para atualiza\u00E7\u00F5es de seguran\u00E7a.",
+    "DataPublicacao": "2026-03-09",
+    "Prioridade": "Baixa",
+    "Destino": "Todos",
+    "Ativo": true
+  },
+  {
+    "Id": 5,
+    "Titulo": "Aus\u00EAncia",
+    "Mensagem": "A professora Ana Paula nao dar\u00E1 aula na terce-feira",
+    "DataPublicacao": "2026-03-10",
+    "Prioridade": "Alta",
+    "Destino": "Portal",
+    "Ativo": true
+  },
+  {
+    "Id": 6,
+    "Titulo": "Saida",
+    "Mensagem": "O aluno caio nao esta mais na escola",
+    "DataPublicacao": "2026-03-10",
+    "Prioridade": "Alta",
+    "Destino": "Portal",
+    "Ativo": true
+  }
+]

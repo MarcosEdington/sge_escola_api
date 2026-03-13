@@ -1,0 +1,13 @@
+[
+  {
+    "Id": 1,
+    "Titulo": "Prova Mensal de Matem\u00E1tica",
+    "Descricao": "Prova do Professo Marcos de materm\u00E1tica",
+    "DataInicio": "2026-03-12T00:00:00",
+    "DataFim": "2026-03-12T00:00:00",
+    "TipoEvento": "Prova",
+    "TurmaId": 1,
+    "Disciplina": "Matem\u00E1tica ",
+    "Ativo": true
+  }
+]

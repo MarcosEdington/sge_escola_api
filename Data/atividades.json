@@ -1,0 +1,20 @@
+[
+  {
+    "Id": 2,
+    "TurmaId": 1,
+    "Disciplina": "Matem\u00E1tica ",
+    "Titulo": "Atividade de Somar",
+    "Descricao": "",
+    "DataEntrega": "2026-03-26",
+    "Status": "Pendente"
+  },
+  {
+    "Id": 3,
+    "TurmaId": 1,
+    "Disciplina": "Ci\u00EAncias",
+    "Titulo": "Vida dos Insetos",
+    "Descricao": "",
+    "DataEntrega": "2026-03-31",
+    "Status": "Pendente"
+  }
+]

@@ -1,0 +1,176 @@
+1. Gestão de Turmas e Enturmação
+Atualmente, os alunos estão "soltos" no sistema. Precisamos criar o módulo onde você define as turmas (Ex: 1º Ano A, 2º Ano B) e vincula os alunos a elas.
+
+No Back-end: Criar TurmasController e TurmasRepository.
+
+No Front-end: Tela para listar turmas e um botão "Adicionar Alunos à Turma".
+
+2. Controle de Frequência (Chamada Digital)
+Este é o coração de um SGE. Lembra que no seu código C# existia uma lógica de PercentualFrequencia? Podemos criar a interface de chamada.
+
+Funcionalidade: O professor seleciona a turma e marca quem faltou. O sistema calcula automaticamente quem está com "Alerta de Evasão" (abaixo de 75%).
+
+3. Dashboard com Gráficos Reais
+Sair daqueles números fixos ("1,250 alunos") e mostrar a realidade do seu arquivo alunos.json.
+
+Funcionalidade: Gráficos de pizza mostrando quantos alunos estão Ativos vs. Evadidos, e quantos possuem pendência documental.
+
+
+***************************************************************************************************************************************************
+
+🚀 O que mais um SGE precisa? (Meus planos para o Beija-Flor)
+Se você quer levar o sistema para o próximo nível de profissionalismo, aqui estão os módulos que eu sugiro implementarmos em seguida, por ordem de importância:
+
+1. Gestão de Notas e Frequência (O "Coração" do Sistema)
+Atualmente temos alunos e turmas, mas não sabemos se eles estão passando de ano.
+
+Diário de Classe: Onde o professor lança a falta/presença.
+
+Boletim Digital: Uma tela para lançar as notas do 1º ao 4º bimestre e calcular a média automaticamente.
+
+2. Módulo Financeiro (Controle de Mensalidades)
+Essencial se a escola for privada.
+
+Geração de carnês ou controle de pagamentos.
+
+Status de adimplência (quem pagou e quem está devendo).
+
+Nota: Como você já trabalhou em projetos de "Controle de Gastos", essa lógica vai ser fácil para nós.
+
+3. Gestão de Professores e Disciplinas
+Vincular professores às turmas.
+
+Cadastro de matérias (Matemática, Português, etc.).
+
+Grade horária (quem dá aula onde e em qual horário).
+
+4. Relatórios e Dashboard Estatístico
+Gráficos de evasão escolar.
+
+Média de notas por turma.
+
+Alunos com documentação pendente (que já começamos no AlunosList).
+
+***************************************************************************************************************************************************
+
+
+2. Interface no Front-end (React)
+Para o design, vamos manter o padrão moderno com lucide-react. Minha sugestão é criar uma aba chamada "Corpo Docente".
+
+O que teremos nesta tela:
+
+Cards de Professores: Com foto (ou iniciais), especialidade e um botão "Ver Grade".
+
+Modal de Atribuição: Onde você seleciona o Professor e marca quais turmas e horários ele assume.
+
+3. Próximos Passos Práticos
+Para começarmos a codificar agora, qual destes você prefere atacar primeiro?
+
+Cadastro de Professores: Criar a tela para cadastrar os dados dos docentes (similar à de Alunos, mas com campos de formação).
+
+Vínculo de Turmas: Uma tela onde selecionamos a Turma (ex: 1º Ano A) e montamos o quadro de horários dela, escolhendo qual professor dará cada matéria.
+
+Dica: Eu recomendo começarmos pelo Cadastro de Professores, pois sem eles não temos quem vincular às turmas.
+
+Podemos seguir com a criação do ProfessoresList.tsx e ProfessorForm.tsx?
+
+
+**********************************************************************************************************************************************************
+
+3. O que fazemos agora?
+Podemos seguir por dois caminhos:
+
+Caminho A (Rápido): Continuamos com a GestaoGrade fixa apenas para você ver o funcionamento do vínculo Professor x Turma, e depois criamos a tela de configurações.
+
+Caminho B (Arquitetura): Paramos tudo e criamos agora a Tela de Configurações de Horários, para que a GestaoGrade já nasça lendo os dados do banco.
+
+Qual faz mais sentido para o seu momento agora? Se quiser o Caminho B, eu já te mando o código para criar essa tela de "Setup de Horários"!
+
+**********************************************************************************************************************************************************
+
+1. Reestruturação do Acesso (Login e Perfis)
+Atualmente, o seu LoginPage.tsx já salva o perfil do usuário: localStorage.setItem('user_perfil', response.data.perfil);. Vamos utilizar esse dado para decidir o que cada um vê.
+
+Estratégia de Direcionamento:
+Perfil 'Admin' ou 'Secretaria': Direciona para o Dashboard atual com todas as funções de gestão (Alunos, Professores, Financeiro).
+
+Perfil 'Professor': Direciona para um Dashboard Simplificado focado em: Chamada Digital e Lançamento de Notas.
+
+Perfil 'Aluno/Responsável': Direciona para o Portal do Aluno (Visualização de Notas, Frequência e Boletos).
+
+2. Implementação do "Coração" do Sistema: Chamada Digital
+Como você mencionou, a lógica de PercentualFrequencia no C# precisa de uma interface. Criaremos o componente ChamadaDigital.tsx.
+
+O Fluxo será:
+
+Professor seleciona a Turma.
+
+O sistema lista os alunos daquela turma.
+
+O professor marca Presença/Falta (Checkbox ou Switch).
+
+O Backend C# calcula automaticamente o percentual de faltas e atualiza o status do aluno.
+
+3. Portal do Aluno (Área dos Pais)
+Para criar o acesso via Matrícula (RA), faremos o seguinte:
+
+No Cadastro (AlunoForm.tsx): Adicionaremos um campo de Senha Inicial. O login do aluno será o registroAcademico (RA) e essa senha.
+
+Na Tela de Login: Se o sistema detectar que o login foi feito com um RA, ele redireciona para a rota /portal-aluno em vez de /dashboard.
+
+Funcionalidades do Portal do Aluno:
+Meu Boletim: Consome a função que já temos de getNotasPorAluno.
+
+Frequência: Gráfico simples de presença.
+
+Financeiro: Visualização das mensalidades geradas na FinanceiroLista.tsx que estão como "Pendentes".
+
+4. Ajuste nos Ícones da Tela de Login
+Você perguntou sobre os ícones de "Biblioteca", "Alunos" e "Secretaria" no rodapé do login. Eles podem servir como Landing Pages informativas ou filtros de acesso rápido:
+
+Secretaria: Link para os pais solicitarem documentos online.
+
+Alunos: Atalho direto para a tela de login exclusiva do aluno.
+
+Biblioteca: Consulta ao acervo (Módulo futuro).
+
+Próximos Passos Sugeridos
+Para mantermos o ritmo, qual destes você prefere implementar primeiro?
+
+Módulo de Chamada Digital: Criar a tela onde o professor faz a frequência diária (conecta com a lógica de Turmas que já temos).
+
+Portal do Aluno (Visualização): Criar a interface que o aluno verá (Boletim e Financeiro).
+
+Sistema de Login por Perfil: Ajustar o Dashboard.tsx para esconder botões (como Financeiro) se o usuário não for 'Admin'.
+
+Gostaria que eu gerasse o código para o Módulo de Chamada Digital agora?
+
+**********************************************************************************************************************************************************
+O que essa mudança afeta?
+Backend (C#): Precisaremos atualizar a classe Turma.cs para incluir uma lista de objetos Disciplina (com Nome e ProfessorId).
+
+Repositórios: Ao salvar a turma, o repositório passará a persistir essa nova lista de objetos dentro do JSON de turmas.
+
+Outras Telas:
+
+Gestão de Atividades: Em vez de digitar a disciplina manualmente em um input, você poderá usar um select que puxa as disciplinas da turma selecionada.
+
+Lançamento de Notas: Poderá ser filtrado automaticamente pelas disciplinas cadastradas na turma.
+
+Portal do Aluno: Poderá exibir a grade curricular completa da turma antes mesmo de qualquer nota ou atividade ser lançada.
+
+**********************************************************************************************************************************************************
+
+É possível?
+Sim, totalmente. O fluxo é simples:
+
+Admin: Ativa a temporada de rematrícula.
+
+Portal: O sistema cruza os dados do alunos.json e mensalidades.json em tempo real.
+
+Segurança: Se o aluno deve, ele não consegue avançar. Se o sistema está fechado, o botão não aparece.
+
+Como quer seguir?
+Quer que eu comece criando a estrutura desse botão no PortalAluno.tsx com essa lógica de validação, ou prefere criar primeiro a tela de configuração no seu Dashboard para controlar a liberação?
+
+**********************************************************************************************************************************************************

@@ -1,0 +1,14 @@
+[
+  {
+    "Id": 1,
+    "Nome": "1\u00BA Ano A ",
+    "AnoLetivo": "2026",
+    "Turno": "Matutino",
+    "Capacidade": 30,
+    "AlunosIds": [
+      1,
+      3,
+      2
+    ]
+  }
+]

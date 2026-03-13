@@ -1,0 +1,47 @@
+[
+  {
+    "Id": 0,
+    "Email": "admin@escola.com",
+    "Senha": "123",
+    "Nome": "Administrador Beija-Flor",
+    "Perfil": "Admin",
+    "UltimoAcesso": "2026-02-27T04:10:53.2176406-03:00",
+    "PrimeiroAcesso": false
+  },
+  {
+    "Id": 1,
+    "Email": "0101",
+    "Senha": "1234",
+    "Nome": "Paulo Henrique",
+    "Perfil": "Aluno",
+    "UltimoAcesso": "2026-03-09T19:23:02.8109496-03:00",
+    "PrimeiroAcesso": false
+  },
+  {
+    "Id": 2,
+    "Email": "0202",
+    "Senha": "1234",
+    "Nome": "Jorge Santos",
+    "Perfil": "Aluno",
+    "UltimoAcesso": "2026-03-12T03:20:27.8051644-03:00",
+    "PrimeiroAcesso": false
+  },
+  {
+    "Id": 3,
+    "Email": "0404",
+    "Senha": "123",
+    "Nome": "Italo Souza Santos",
+    "Perfil": "Aluno",
+    "UltimoAcesso": "2026-03-12T02:17:35.4983965-03:00",
+    "PrimeiroAcesso": true
+  },
+  {
+    "Id": 4,
+    "Email": "0606",
+    "Senha": "123456",
+    "Nome": "Marcela Almeida",
+    "Perfil": "Aluno",
+    "UltimoAcesso": "2026-03-12T19:49:36.3880425-03:00",
+    "PrimeiroAcesso": false
+  }
+]
